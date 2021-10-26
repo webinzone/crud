@@ -1,0 +1,35 @@
+development:
+  adapter: mysql2
+  encoding: utf8
+  database: crud_development
+  username: root
+ #password: 
+  port: 3306
+  host: localhost
+
+test:
+  adapter: mysql2
+  encoding: utf8
+  database: crud_test
+  username: root
+  # password: 
+  port: 3306
+  host: localhost
+
+staging:
+  adapter: mysql2
+  encoding: utf8
+  database: crud_staging
+  username: root
+  # password: 
+  port: 3306
+  host: localhost
+
+production:
+  adapter: mysql2
+  encoding: utf8
+  database: crud_production
+  username: root
+  # password: 
+  port: 3306
+  host: localhost

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <%= render partial: 'layouts/product/head' %>
+
+  <body style="background-color: #DAD8D7;">
+    
+    <%= render partial: 'layouts/product/header' %>
+
+    <%= yield %>
+
+    <%= render partial: 'layouts/product/footer' %>
+
+    <%= render partial: 'layouts/product/script' %>
+ 
+    <div id="GENERIC_MODAL_DIV">
+    </div>
+  
+  	
+    <script type="text/javascript">
+
+      <%= yield :javascript_footer -%>
+    </script>
+    
+  </body>
+</html>

@@ -1,0 +1,67 @@
+<%= form_with( id: "form_products", model: @product, remote: true) do |f| %>
+  <div class="row">
+    <div class="col-md-4">
+      <%= f.label :image_title , :class => "form-controll"%>
+    </div>
+    <div class="col-md-4">
+      <%= f.text_field :title, :class => "form-controll" %>
+    </div> 
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <%= f.label :description, :class => "form-controll" %>
+    </div>
+    <div class="col-md-4">
+      <%= f.text_field :description, :class => "form-controll" %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <%= f.label :product_image, :class => "form-controll" %>
+    </div>
+    <div class="col-md-4">
+      <%= f.file_field :image, :class => "form-controll" %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <%= f.label :category, :class => "form-controll" %>
+    </div>
+    <div class="col-md-4">
+      <%= f.select :category, ["People","Tech","Entertainment"], :class => "form-controll" %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <%= f.label :item_for_sale %>
+    </div>
+    <div class="col-md-4">
+      <%= f.radio_button :sale_item, true, :class => "form-controll" %>
+      <%= f.label :sale_item, "Yes, Item for Sale", :value => "Yes", :id => "sale_item"  %>
+      <%= f.text_field :cost, :class => "form-controll", :id => "cost" %>
+      <%= f.radio_button :sale_item, false, :class => "form-controll" %>
+      <%= f.label :sale_item, "No, it’s free", :value => "No" %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <%= f.label :accept_t_and_c%>
+    </div>
+    <div class="col-md-4">
+      <%= f.check_box :t_c_accepted, { class: 'form-controll' }, "accepted", "false"%>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <%= f.submit "save" , :class =>"btn btn-danger" %>
+    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+  </div>
+<% end %>        
+
+<script type="text/javascript">
+  var re = document.getElementById("cost");
+  var cd = document.getElementById("sale_item");
+  re.onclick = function(){
+    cd.setAttribute("checked", "checked");
+    cd.value = re.value;
+  };
+</script>

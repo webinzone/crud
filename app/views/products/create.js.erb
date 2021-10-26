@@ -1,0 +1,14 @@
+<% if @product.errors.blank? %>
+
+  // Showing Growl Like Message
+  notifySuccess("<%= escape_javascript(@notification[:title]) %>", "<%= escape_javascript(@notification[:message]) %>");
+  
+   $('#products_popup').modal('hide');
+   window.location.replace("<%= root_path %>");
+<% else %>
+
+  // Showing Growl Like Message
+  notifyError("<%= escape_javascript(@notification[:title]) %>", "<%= escape_javascript(@notification[:message]) %>");
+
+<% end %>
+

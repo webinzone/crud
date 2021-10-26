@@ -1,0 +1,38 @@
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+  <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h2 class="h2">Home / Products</h2>
+  </div>
+    <div class="row">
+      <div class="col-md-9">
+        <h3>Products - <%=@product.id%></h3>
+        <div class="card" align="align-items-center">
+          <h5 class="card-header" style="background-color: #35D4F4;"><%=@product.name%></h5>
+          <div class="card-body" style="background: #D2F4FB;">
+            <div class="row" >
+              <div class="column"> 
+                <% if @product.image.attached? %>
+                  <%= image_tag @product.image.variant(resize: "300x400")%>
+                <% end %>
+              </div>
+              <div class="colmn"> 
+                <h5 class="card-text">Title :<%=@product.title%></h5>
+                <p class="card-text">Category: <%=@product.category%></p>
+                <p class="card-text">Description: <%=@product.description%></p>
+                <p class="card-text">Item For Sale: <%=@product.sale_item%></p>
+                <p class="card-text">Cost: <%=@product.cost%></p>
+                <p class="card-text">Accepted T $ C :
+                <% if @product.t_c_accepted == true %> 
+                  Accepted 
+                <% else %>
+                  Not Accepted
+                <% end %>
+                </p>
+
+              </div>
+            </div>
+          </div>
+          <div class="card-footer" style="background-color: #35D4F4;"><%= link_to 'Go Back' ,root_path, :class =>"btn btn-primary"  %></div>   
+        </div>
+      </div>
+    </div>
+</main>
